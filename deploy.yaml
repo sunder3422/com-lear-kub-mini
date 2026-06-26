@@ -1,19 +1,20 @@
-#apiVersion: apps/v1
-#kind: Deployment
-#metadata:
-#  name: my-springboot-deployment
-#spec:
-#  replicas: 3
-#  selector:
-#    matchLabels:
-#      app: my-springboot-deployment
-#  template:
-#    metadata:
-#      labels:
-#        app: my-springboot-deployment
-#    spec:
-#      containers:
-#      - name: my-springboot-deployment
-#        image: springboot-k8-project:1.0
-#        ports:
-#        - containerPort: 8080
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-mini-kube
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-mini-kube
+  template:
+    metadata:
+      labels:
+        app: my-mini-kube
+    spec:
+      containers:
+      - name: my-mini-kube
+        image: sunder3422/my-mini-kube-jar
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
